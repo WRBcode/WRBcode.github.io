@@ -90,12 +90,53 @@
   }
   .nav-links a:hover { color: var(--ink); background: var(--bg-soft); }
   .nav-links a.active { color: var(--accent-ink); background: var(--accent-soft); }
+  /* ---- holographic 3D theme toggle ---- */
+  .nav-links { perspective: 520px; }
+  @property --hue { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+  @keyframes huespin { to { --hue: 360deg; } }
   #theme-btn {
-    border: 1px solid var(--line); background: var(--card); color: var(--ink-soft);
-    width: 34px; height: 34px; border-radius: 9px; cursor: pointer; margin-left: 10px;
-    display: grid; place-items: center; font-size: .95rem; transition: all .18s;
+    position: relative; z-index: 0;
+    border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+    background: linear-gradient(165deg, color-mix(in srgb, var(--card) 88%, #ffffff), var(--card) 65%);
+    color: var(--ink);
+    width: 44px; height: 36px; border-radius: 11px; cursor: pointer; margin-left: 14px;
+    display: grid; place-items: center; font-size: 1rem;
+    transform-style: preserve-3d;
+    transition: transform .3s cubic-bezier(.2,.7,.25,1.25), box-shadow .3s, border-color .3s;
+    box-shadow: 0 1px 0 rgba(255,255,255,.3) inset, 0 5px 14px rgba(0,0,0,.22);
   }
-  #theme-btn:hover { color: var(--ink); box-shadow: var(--shadow); transform: rotate(180deg); }
+  [data-theme="dark"] #theme-btn { box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 5px 14px rgba(0,0,0,.5); }
+  /* deep rainbow glow — sits *behind* in 3D space */
+  #theme-btn::before {
+    content: ""; position: absolute; inset: -5px; border-radius: 16px; z-index: -2;
+    background: conic-gradient(from var(--hue),
+      #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac, #ff6b6b);
+    filter: blur(12px) saturate(1.6);
+    opacity: .5; transform: translateZ(-18px) scale(.9);
+    transition: opacity .35s, transform .35s, filter .35s;
+    animation: huespin 5s linear infinite;
+  }
+  /* crisp rainbow rim, counter-rotating */
+  #theme-btn::after {
+    content: ""; position: absolute; inset: -2px; border-radius: 13px; z-index: -1;
+    background: conic-gradient(from calc(0deg - var(--hue)),
+      #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac, #ff6b6b);
+    opacity: .85; transform: translateZ(-6px);
+    animation: huespin 5s linear infinite;
+    transition: opacity .35s, inset .35s;
+  }
+  /* hover: button pulls FORWARD, rainbow blooms in the back */
+  #theme-btn:hover {
+    transform: translateZ(26px) rotateX(6deg);
+    border-color: transparent;
+    box-shadow: 0 1px 0 rgba(255,255,255,.35) inset, 0 18px 36px rgba(0,0,0,.35);
+  }
+  #theme-btn:hover::before { opacity: 1; transform: translateZ(-34px) scale(1.25); filter: blur(16px) saturate(2); }
+  #theme-btn:hover::after { opacity: 1; inset: -3px; }
+  /* press: sinks back toward the rainbow */
+  #theme-btn:active { transform: translateZ(4px) scale(.93); transition-duration: .1s; }
+  #theme-btn .ticon { display: inline-block; transition: transform .45s cubic-bezier(.3,.7,.3,1.3); }
+  @media (prefers-reduced-motion: reduce) { #theme-btn::before, #theme-btn::after { animation: none; } }
 
   /* ---------- Hero ---------- */
   header { padding: 96px 0 60px; position: relative; overflow: hidden; }
@@ -422,7 +463,7 @@
       <a href="#research">Research</a>
       <a href="#industry">Industry</a>
       <a href="#education">Education</a>
-      <button id="theme-btn" aria-label="Toggle theme">◐</button>
+      <button id="theme-btn" aria-label="Toggle theme"><span class="ticon">☾</span></button>
     </div>
   </div>
 </nav>
@@ -850,12 +891,19 @@
 <script>
   // Theme toggle (persisted) — defaults to dark ("black & gold")
   const btn = document.getElementById('theme-btn');
+  const ticon = btn.querySelector('.ticon');
   const saved = localStorage.getItem('theme');
   if (saved) document.documentElement.dataset.theme = saved;
+  let spins = 0;
+  const setIcon = () => { ticon.textContent = document.documentElement.dataset.theme === 'dark' ? '☾' : '☀'; };
+  setIcon();
   btn.addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
     localStorage.setItem('theme', next);
+    spins += 360;
+    ticon.style.transform = `rotate(${spins}deg)`;
+    setTimeout(setIcon, 200);
   });
 
   // Scroll progress bar
