@@ -429,10 +429,110 @@
   /* stat numbers glow softly on hover */
   .stat:hover .num span, .stat:hover .num .count { text-shadow: 0 0 22px color-mix(in srgb, var(--accent) 55%, transparent); }
 
+  /* ============================================================
+     HOLO LAYER — the rainbow language, everywhere it earns it
+     ============================================================ */
+
+  /* rainbow scroll progress */
+  #progress {
+    height: 2.5px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac);
+    box-shadow: 0 0 14px rgba(151,117,250,.55);
+  }
+
+  /* cursor spotlight — soft gold wash trailing the pointer */
+  #spotlight {
+    position: fixed; width: 760px; height: 760px; border-radius: 50%;
+    pointer-events: none; z-index: 3; opacity: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 6%, transparent), transparent 62%);
+    transition: opacity .4s;
+  }
+  [data-theme="dark"] #spotlight { background: radial-gradient(circle, color-mix(in srgb, var(--accent) 9%, transparent), transparent 62%); }
+
+  /* Email button: same holographic 3D treatment as the toggle */
+  .hero-links { perspective: 700px; }
+  .btn-primary { position: relative; z-index: 0; }
+  .btn-primary::before {
+    content: ""; position: absolute; inset: -4px; border-radius: 16px; z-index: -1;
+    background: conic-gradient(from var(--hue),
+      #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac, #ff6b6b);
+    filter: blur(13px) saturate(1.6);
+    opacity: 0; transform: translateZ(-16px) scale(.92);
+    animation: huespin 5s linear infinite;
+    transition: opacity .35s, transform .35s;
+  }
+  .btn-primary:hover { transform: translateZ(22px) rotateX(4deg); }
+  .btn-primary:hover::before { opacity: .9; transform: translateZ(-32px) scale(1.12); }
+  .btn-primary:active { transform: translateZ(4px) scale(.95) !important; }
+
+  /* portrait: deep holographic aura behind the gold ring */
+  .portrait-wrap { z-index: 0; }
+  .portrait-wrap::before {
+    content: ""; position: absolute; inset: -16px; border-radius: 44px; z-index: -1;
+    background: conic-gradient(from calc(0deg - var(--ang)),
+      #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac, #ff6b6b);
+    filter: blur(30px) saturate(1.5);
+    opacity: .16; animation: ringspin 9s linear infinite;
+    transition: opacity .45s;
+  }
+  .portrait-wrap:hover::before { opacity: .5; }
+
+  /* first-author papers: gold edge turns holographic on hover */
+  .pub.first-author::after {
+    content: ""; position: absolute; left: -3px; top: 6px; bottom: 6px; width: 3px;
+    border-radius: 3px; z-index: 2;
+    background: linear-gradient(180deg, #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa);
+    opacity: 0; transition: opacity .35s;
+  }
+  .pub.first-author:hover::after { opacity: 1; }
+
+  /* stat cards: rainbow baseline sweeps in */
+  .stat::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .stat:hover::after { transform: scaleX(1); }
+
+  /* focus roman numerals go iridescent on hover */
+  .focus:hover .roman {
+    background: linear-gradient(115deg, #ffa94d, #f783ac, #9775fa, #4dabf7, #69db7c);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+
+  /* active publication filter: holographic ring */
+  .pf.on { overflow: visible; position: relative; z-index: 0; }
+  .pf.on::before {
+    content: ""; position: absolute; inset: -2px; border-radius: 999px; z-index: -1;
+    background: conic-gradient(from var(--hue),
+      #ff6b6b, #ffa94d, #ffe066, #69db7c, #4dabf7, #9775fa, #f783ac, #ff6b6b);
+    animation: huespin 5s linear infinite; opacity: .85;
+  }
+
+  /* section flourish warms to rainbow when you're there */
+  .sec-head:hover::after {
+    background: linear-gradient(90deg, #ff6b6b, #ffe066, #4dabf7, transparent);
+  }
+
+  /* hero name: gold by default, iridescent sweep on hover */
+  h1.hero-name em:hover {
+    background: linear-gradient(105deg, #ffa94d 10%, #f783ac 32%, #9775fa 52%, #4dabf7 72%, #69db7c 92%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+    cursor: default;
+  }
+
   /* respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .blob, h1.hero-name em, .portrait-wrap { animation: none !important; }
+    .blob, h1.hero-name em, .portrait-wrap, .portrait-wrap::before,
+    .btn-primary::before, .pf.on::before { animation: none !important; }
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    #spotlight { display: none; }
   }
 
   @media (max-width: 880px) {
@@ -981,6 +1081,17 @@
       });
       b.addEventListener('pointerleave', () => { b.style.transform = ''; });
     });
+
+    // cursor spotlight
+    const sp = document.createElement('div');
+    sp.id = 'spotlight';
+    document.body.appendChild(sp);
+    addEventListener('pointermove', e => {
+      sp.style.left = e.clientX + 'px';
+      sp.style.top = e.clientY + 'px';
+      sp.style.opacity = 1;
+    }, { passive: true });
+    document.documentElement.addEventListener('pointerleave', () => { sp.style.opacity = 0; });
 
     // portrait parallax
     const portrait = document.getElementById('portrait');
