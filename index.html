@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ruibo Wang — Computer Vision & Medical Imaging Researcher</title>
-<meta name="description" content="Ruibo Wang — researcher in computer vision, medical imaging, and neural operators. TU Delft · Caltech SURF · Cornell.">
+<meta name="description" content="Ruibo Wang — medical imaging researcher: MRI reconstruction, generative priors, and loss design. TU Delft · Cornell SabLab.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -574,28 +574,27 @@
   <div class="blob b3"></div>
   <div class="wrap hero">
     <div>
-      <div class="kicker">Computer Vision · Medical Imaging · Neural Operators</div>
+      <div class="kicker">Medical Imaging · MRI Reconstruction · Generative Models</div>
       <h1 class="hero-name">Hi, I'm <em>Ruibo Wang</em></h1>
       <p class="hero-bio">
-        I'm a Computer Science undergraduate at <b>TU Delft</b>, currently a
-        <b>2026 Caltech SURF Fellow</b> at <b>AnimaLab</b> (Prof. Anima Anandkumar) and a visiting
-        student researcher at <b>Cornell University</b> (Prof. Mert R. Sabuncu).
-        I work on <b>resolution-agnostic neural operators</b>,
-        <b>medical image reconstruction &amp; synthesis</b> (MRI / CT), and learnable loss design.
+        I'm a Computer Science undergraduate at <b>TU Delft</b> and a visiting student researcher
+        at <b>Cornell University</b>'s SabLab (Dr. Heejong Kim &amp; Prof. Mert R. Sabuncu).
+        I work on <b>medical image reconstruction &amp; synthesis</b> (MRI / CT):
+        <b>few-step generative priors for 3D MRI reconstruction</b>, <b>random-filter losses</b>
+        for image reconstruction, and 3D medical image synthesis.
         <span class="tagline">— building models that see anatomy the way physics intended.</span>
       </p>
       <div class="hero-affils">
-        <span class="affil"><b>Caltech</b> · AnimaLab</span>
         <span class="affil"><b>Cornell</b> · SabLab</span>
         <span class="affil"><b>TU Delft</b> · CSE</span>
-        <span class="affil"><b>SIAT, CAS</b> · Research Intern</span>
+        <span class="affil"><b>SIAT, CAS</b> · Research Assistant</span>
         <span class="affil"><b>ByteDance</b> · CV Intern</span>
       </div>
       <div class="hero-links">
         <a class="btn btn-primary" href="mailto:rw787@cornell.edu">✉ &nbsp;Email</a>
-        <a class="btn btn-ghost" href="https://arxiv.org/a/wang_r" title="arXiv listing">arXiv ↗</a>
+        <a class="btn btn-ghost" href="https://openreview.net/profile?id=~Ruibo_Wang4" title="OpenReview profile">OpenReview ↗</a>
         <a class="btn btn-ghost" href="#" title="Add your Google Scholar URL">Google Scholar</a>
-        <a class="btn btn-ghost" href="#" title="Add your GitHub URL">GitHub</a>
+        <a class="btn btn-ghost" href="https://github.com/WRBcode" title="GitHub">GitHub ↗</a>
         <a class="btn btn-ghost" href="Ruibo_Wang_CV.pdf">CV ↓</a>
       </div>
     </div>
@@ -607,10 +606,10 @@
   </div>
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><div class="num"><span class="count" data-to="10">0</span><span>+</span></div><div class="lbl">Papers authored / co-authored</div></div>
-      <div class="stat"><div class="num"><span class="count" data-to="3">0</span><span>×</span></div><div class="lbl">NeurIPS 2026 submissions</div></div>
-      <div class="stat"><div class="num"><span class="count" data-to="6">0</span></div><div class="lbl">Research labs &amp; groups</div></div>
-      <div class="stat"><div class="num">8.83<span>/10</span></div><div class="lbl">GPA · TU Delft</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="13">0</span></div><div class="lbl">Papers authored / co-authored</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="2">0</span></div><div class="lbl">NeurIPS 2026 papers</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="5">0</span></div><div class="lbl">Accepted / published</div></div>
+      <div class="stat"><div class="num">8.43<span>/10</span></div><div class="lbl">GPA · TU Delft</div></div>
     </div>
   </div>
 </header>
@@ -625,8 +624,8 @@
     <div class="focus-grid">
       <div class="focus reveal">
         <div class="roman">I.</div>
-        <h3>Neural Operators &amp; Scientific ML</h3>
-        <p>Resolution-agnostic operator learning for 3D MRI reconstruction — train coarse, infer fine, zero retraining. DISCO filter bases, coarse-to-fine regimes, physics-consistent priors.</p>
+        <h3>Few-Step Generative Priors for 3D MRI</h3>
+        <p>Flow-matching (MeanFlow) priors placed inside the reconstruction solve for 3D multi-coil MRI — one to three network evaluations, group-equivariant backbones, and one set of weights for every evaluation budget.</p>
       </div>
       <div class="focus reveal">
         <div class="roman">II.</div>
@@ -635,8 +634,8 @@
       </div>
       <div class="focus reveal">
         <div class="roman">III.</div>
-        <h3>Learnable Losses &amp; Optimization</h3>
-        <p>Plug-and-play objectives that inject architectural priors at zero inference cost — bag-of-filters losses, curriculum activation, and metric-aware multi-objective optimizers.</p>
+        <h3>Loss Design &amp; Optimization</h3>
+        <p>Random-filter losses that need neither pretrained features nor loss-weight tuning, and metric-aware multi-objective optimizers — training objectives that add no inference cost.</p>
       </div>
     </div>
   </section>
@@ -647,11 +646,13 @@
       <h2><span class="idx">No. 02</span>News</h2>
     </div>
     <div class="news reveal">
-      <div class="news-item"><div class="news-date">2026.06</div><div class="news-body"><b>MAdam</b> is now on arXiv — <a href="https://arxiv.org/abs/2606.03904">arXiv:2606.03904</a>, metric-aware multi-objective Adam, with the Cornell SabLab team.</div></div>
-      <div class="news-item"><div class="news-date">2026.05</div><div class="news-body">Three papers submitted to <b>NeurIPS 2026</b> — neural-operator MRI reconstruction, VesselGAN, and MAdam.</div></div>
-      <div class="news-item"><div class="news-date">2026.04</div><div class="news-body"><b>SR-INR</b> for CT metal artifact reduction received <b>Minor Revision</b> at IEEE Signal Processing Letters.</div></div>
+      <div class="news-item"><div class="news-date">2026.09</div><div class="news-body">Two papers accepted at <b>NeurIPS 2026</b>: 3D MRI reconstruction with resolution-agnostic neural operators (co-first author) and <b>MAdam</b>.</div></div>
+      <div class="news-item"><div class="news-date">2026.09</div><div class="news-body">Submitted two first-author papers to <b>ICLR 2027</b>: <b>RaFL</b> (random filter losses) and <b>EquiFlow</b> (few-step 3D MRI reconstruction).</div></div>
+      <div class="news-item"><div class="news-date">2026.09</div><div class="news-body"><b>FSANet</b> is on arXiv — <a href="https://arxiv.org/abs/2609.16773">arXiv:2609.16773</a>.</div></div>
+      <div class="news-item"><div class="news-date">2026.07</div><div class="news-body"><b>OPERA</b> accepted at <b>ACM MM 2026</b>; <b>ProFA-GAN</b> (co-first author) accepted at <b>PRCV 2026</b>.</div></div>
+      <div class="news-item"><div class="news-date">2026.06</div><div class="news-body"><b>MAdam</b> is on arXiv — <a href="https://arxiv.org/abs/2606.03904">arXiv:2606.03904</a>, metric-aware multi-objective Adam, with the Cornell SabLab team.</div></div>
       <div class="news-item"><div class="news-date">2026.01</div><div class="news-body">Started as <b>Computer Vision Algorithm Intern</b> at ByteDance — Intelligent Vision AI, face recognition &amp; effects.</div></div>
-      <div class="news-item"><div class="news-date">2025.12</div><div class="news-body">Joined <b>Caltech AnimaLab</b> as a 2026 SURF Fellow and <b>Cornell SabLab</b> as a visiting student researcher.</div></div>
+      <div class="news-item"><div class="news-date">2025.12</div><div class="news-body">Joined <b>Cornell SabLab</b> as a visiting student researcher.</div></div>
       <div class="news-item"><div class="news-date">2025.09</div><div class="news-body">Started B.S. in Computer Science and Engineering at <b>TU Delft</b>.</div></div>
       <div class="news-item"><div class="news-date">2025.08</div><div class="news-body">Won <b>Global 3rd Prize</b> at IJCAI 2025 SpikeCV Infinity Challenge — SNN + NeRF spike-stream reconstruction.</div></div>
       <div class="news-item"><div class="news-date">2025.04</div><div class="news-body">Joined <b>SIAT, Chinese Academy of Sciences</b> (Shenzhen) as a full-time on-site research intern — medical AI, ~6 months.</div></div>
@@ -666,42 +667,60 @@
       <div class="pub-filters">
         <button class="pf on" data-f="all">All</button>
         <button class="pf" data-f="first">First-author</button>
-        <button class="pf" data-f="out">Published / arXiv</button>
+        <button class="pf" data-f="out">Accepted / arXiv</button>
       </div>
     </div>
     <div class="pub-list">
 
       <div class="pub first-author reveal" data-cat="first">
         <div class="pub-top">
-          <div class="pub-title">FSANet: Frequency-Spatial Aware Network for Image Segmentation</div>
+          <div class="pub-title">RaFL: An Empirical Study of Random Filter Losses for Image Reconstruction</div>
           <span class="badge review">Under Review</span>
         </div>
-        <div class="pub-authors"><b>Wang, R.</b>, Shang, K., et al.</div>
-        <div class="pub-venue"><span class="venue-name">IEEE TIP</span><span class="pub-tag">Segmentation</span><span class="pub-tag">Frequency Learning</span></div>
+        <div class="pub-authors"><b>Wang, R.</b>, Liu, F., Tiulpin, A., Sabuncu, M. R., Kim, H.</div>
+        <div class="pub-venue"><span class="venue-name">ICLR 2027</span><span class="pub-tag">Loss Functions</span><span class="pub-tag">Image Reconstruction</span></div>
       </div>
 
       <div class="pub first-author reveal" data-cat="first">
         <div class="pub-top">
-          <div class="pub-title">VesselGAN: Hierarchical Prompt-Guided GAN with Focal Frequency Learning for Intracranial Vessel Wall MRI Synthesis</div>
+          <div class="pub-title">EquiFlow: Few-Step 3D MRI Reconstruction with an Equivariant MeanFlow Field</div>
           <span class="badge review">Under Review</span>
         </div>
-        <div class="pub-authors"><b>Wang, R.</b>, Jia, S., Liang, D., Shang, K.</div>
-        <div class="pub-venue"><span class="venue-name">NeurIPS 2026</span><span class="pub-tag">MRI Synthesis</span><span class="pub-tag">Generative Models</span></div>
+        <div class="pub-authors"><b>Wang, R.</b>, Peng, F.</div>
+        <div class="pub-venue"><span class="venue-name">ICLR 2027</span><span class="pub-tag">MRI Reconstruction</span><span class="pub-tag">Flow Matching</span></div>
       </div>
 
-      <div class="pub reveal" data-cat="co">
+      <div class="pub first-author reveal" data-cat="first out">
         <div class="pub-top">
-          <div class="pub-title">Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators</div>
+          <div class="pub-title">FSANet: Frequency-Spatial Aware Network for Image Segmentation</div>
           <span class="badge review">Under Review</span>
         </div>
-        <div class="pub-authors">Wang, J., <b>Wang, R.</b>, Duruisseaux, V., Daftari, R., Gan, W., Jatyani, A. S., Bonev, B., Anandkumar, A.</div>
-        <div class="pub-venue"><span class="venue-name">NeurIPS 2026</span><span class="pub-tag">Neural Operators</span><span class="pub-tag">3D Reconstruction</span></div>
+        <div class="pub-authors"><b>Wang, R.</b>, Shen, Z., Wu, H., Liang, D., Shang, K.</div>
+        <div class="pub-venue"><span class="venue-name">IEEE TIP</span><a class="pub-link" href="https://arxiv.org/abs/2609.16773">arXiv:2609.16773 ↗</a><span class="pub-tag">Segmentation</span><span class="pub-tag">Frequency Learning</span></div>
+      </div>
+
+      <div class="pub first-author reveal" data-cat="first out">
+        <div class="pub-top">
+          <div class="pub-title">ProFA-GAN: Hierarchical Prompt-Guided Frequency-Aware Generative Adversarial Network for 3D Brain Image Synthesis</div>
+          <span class="badge published">Accepted</span>
+        </div>
+        <div class="pub-authors">Shen, Z.*, <b>Wang, R.*</b>, Jia, S., Yang, J., Liu, F., Shang, K.</div>
+        <div class="pub-venue"><span class="venue-name">PRCV 2026</span><span class="pub-tag">3D Brain MRI Synthesis</span><span class="pub-tag">GAN</span></div>
+      </div>
+
+      <div class="pub first-author reveal" data-cat="first out">
+        <div class="pub-top">
+          <div class="pub-title">Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators</div>
+          <span class="badge published">Accepted · Poster</span>
+        </div>
+        <div class="pub-authors">Wang, J.*, <b>Wang, R.*</b>, Duruisseaux, V., Daftari, R., Gan, W., Jatyani, A. S., Bonev, B., Anandkumar, A.</div>
+        <div class="pub-venue"><span class="venue-name">NeurIPS 2026</span><a class="pub-link" href="https://openreview.net/forum?id=WcGVLtalaf">OpenReview ↗</a><span class="pub-tag">Neural Operators</span><span class="pub-tag">3D MRI Reconstruction</span></div>
       </div>
 
       <div class="pub first-author reveal" data-cat="first">
         <div class="pub-top">
           <div class="pub-title">Scattering-Aware Implicit Neural Representation for CT Metal Artifact Reduction</div>
-          <span class="badge revision">Minor Revision</span>
+          <span class="badge review">Under Review</span>
         </div>
         <div class="pub-authors"><b>Wang, R.*</b>, Yang, J.*, Chen, Z., Wang, C., Shang, K.</div>
         <div class="pub-venue"><span class="venue-name">IEEE SPL</span><span class="pub-tag">Implicit Neural Representation</span><span class="pub-tag">CT</span></div>
@@ -709,11 +728,20 @@
 
       <div class="pub first-author reveal" data-cat="first">
         <div class="pub-top">
-          <div class="pub-title">Mamba-SKAN: State-Space Kolmogorov–Arnold Networks for Multimodal Dermatology Diagnosis</div>
+          <div class="pub-title">Panoramic Priors for Sparse-View Dental CBCT: An Open Paired Benchmark and Fusion Method</div>
           <span class="badge review">Under Review</span>
         </div>
-        <div class="pub-authors"><b>Wang, R.</b>, Shen, Z., et al.</div>
-        <div class="pub-venue"><span class="venue-name">JAMA AI</span><span class="pub-tag">Mamba / SSM</span><span class="pub-tag">Multimodal</span></div>
+        <div class="pub-authors">Hu, X.*, <b>Wang, R.*</b>, Shen, Z.*, Zhang, L., Zeng, C., Liang, X., Song, J.</div>
+        <div class="pub-venue"><span class="venue-name">IEEE TMI</span><span class="pub-tag">Sparse-View CT</span><span class="pub-tag">Dental CBCT</span></div>
+      </div>
+
+      <div class="pub first-author reveal" data-cat="first">
+        <div class="pub-top">
+          <div class="pub-title">Multimodal Deep Learning with Clinical Metadata for Skin Lesion Classification</div>
+          <span class="badge revision">Minor Revision</span>
+        </div>
+        <div class="pub-authors">Shen, C.*, <b>Wang, R.*</b>, et al.</div>
+        <div class="pub-venue"><span class="venue-name">Scientific Reports</span><span class="pub-tag">Multimodal</span><span class="pub-tag">Dermatology</span></div>
       </div>
 
       <div class="pub first-author reveal" data-cat="first out">
@@ -723,15 +751,6 @@
         </div>
         <div class="pub-authors"><b>Wang, R.</b></div>
         <div class="pub-venue"><span class="venue-name">ICAICI 2025</span><a class="pub-link" href="https://dl.acm.org/doi/10.1145/3730436.3730473">ACM DL ↗</a><span class="pub-tag">Video Understanding</span></div>
-      </div>
-
-      <div class="pub reveal" data-cat="co out">
-        <div class="pub-top">
-          <div class="pub-title">MAdam: Metric-Aware Multi-Objective Adam</div>
-          <span class="badge preprint">arXiv · Under Review</span>
-        </div>
-        <div class="pub-authors">Liu, F., Saluja, R., Kwak, S., <b>Wang, R.</b>, Deng, R., Kim, H., Paetzold, J. C., Sabuncu, M. R.</div>
-        <div class="pub-venue"><span class="venue-name">NeurIPS 2026</span><a class="pub-link" href="https://arxiv.org/abs/2606.03904">arXiv:2606.03904 ↗</a><span class="pub-tag">Optimization</span></div>
       </div>
 
       <div class="pub reveal" data-cat="co">
@@ -752,13 +771,22 @@
         <div class="pub-venue"><span class="venue-name">JORSC</span><span class="pub-tag">Synthesis + Segmentation</span></div>
       </div>
 
-      <div class="pub reveal" data-cat="co">
+      <div class="pub reveal" data-cat="co out">
         <div class="pub-top">
-          <div class="pub-title">EnMed: Ensemble Experts for Universal Biomedical Image Analysis</div>
-          <span class="badge review">Under Review</span>
+          <div class="pub-title">OPERA: Offline Policy-guided Expert Routing and Adaptation for Universal Biomedical Image Analysis</div>
+          <span class="badge published">Accepted</span>
         </div>
         <div class="pub-authors">Li, Z.*, Liu, F.*, Hong, Q., <b>Wang, R.</b>, et al.</div>
-        <div class="pub-venue"><span class="venue-name">ACM MM</span><span class="pub-tag">Foundation Models</span></div>
+        <div class="pub-venue"><span class="venue-name">ACM MM 2026</span><span class="pub-tag">Biomedical Image Analysis</span></div>
+      </div>
+
+      <div class="pub reveal" data-cat="co out">
+        <div class="pub-top">
+          <div class="pub-title">MAdam: Metric-Aware Multi-Objective Adam</div>
+          <span class="badge published">Accepted · Poster</span>
+        </div>
+        <div class="pub-authors">Liu, F., Saluja, R., Kwak, S., <b>Wang, R.</b>, Deng, R., Kim, H., Paetzold, J. C., Sabuncu, M. R.</div>
+        <div class="pub-venue"><span class="venue-name">NeurIPS 2026</span><a class="pub-link" href="https://arxiv.org/abs/2606.03904">arXiv:2606.03904 ↗</a><span class="pub-tag">Optimization</span></div>
       </div>
 
     </div>
@@ -775,30 +803,15 @@
       <div class="titem reveal">
         <div class="titem-head">
           <div>
-            <h3>California Institute of Technology · AnimaLab</h3>
-            <div class="org-sub">Research Assistant · <b>2026 Caltech SURF Fellow</b> — with Dr. Valentin Duruisseaux &amp; Prof. Anima Anandkumar · 3D MRI Reconstruction via Neural Operators</div>
-          </div>
-          <span class="t-date">12/2025 — Now</span>
-        </div>
-        <ul>
-          <li>Designed <span class="hl">3D DISCO filter bases</span> (PiecewiseLinear3D, Morlet3D) for resolution-agnostic neural operators — coarse-to-fine training at 256³ with <span class="hl">zero-shot inference at 512³</span>, no retraining, no aliasing.</li>
-          <li>Achieved <span class="metric">35.04 dB PSNR / 0.914 SSIM</span> on SKM-TEA 3D knee MRI, surpassing the E2E-VarNet3D baseline; validated cross-anatomy transfer on a private UCLA liver MRI dataset.</li>
-          <li>Extended the 2D DISCO framework (CVPR 2025), cutting training memory <span class="metric">~8×</span> while preserving local inductive biases for anatomical structure. → NeurIPS 2026 submission.</li>
-        </ul>
-      </div>
-
-      <div class="titem reveal">
-        <div class="titem-head">
-          <div>
             <h3>Cornell University · SabLab</h3>
-            <div class="org-sub">Visiting Student Researcher — with Dr. Heejong Kim &amp; Prof. Mert R. Sabuncu · Random Filter Loss</div>
+            <div class="org-sub">Visiting Student Researcher — with Dr. Heejong Kim &amp; Prof. Mert R. Sabuncu · Random Filter Losses (RaFL)</div>
           </div>
           <span class="t-date">12/2025 — Now</span>
         </div>
         <ul>
-          <li>Pioneered a <span class="hl">"Bag of Filters" learnable loss</span> capturing diverse architectural priors — local detail, global context, pixel-wise intensity — without touching the backbone.</li>
-          <li>Engineered curriculum filter activation, uncertainty-based dynamic weighting, and per-epoch re-randomization: a strict plug-and-play objective with <span class="hl">zero inference-time parameters</span>.</li>
-          <li>Validated on super-resolution, dropout reconstruction, and restoration — up to <span class="metric">+2.11 dB PSNR / +0.04 SSIM</span> on 3D BraTS, dominating L2+Sobel baselines on 2D PICAI.</li>
+          <li>Led <span class="hl">RaFL</span> (first author, ICLR 2027 submission): a random filter loss that compares prediction and target through random convolutions, random Fourier features and random wavelet filters — no pretrained features, no task-specific loss engineering.</li>
+          <li>Balanced the filter families automatically via gradient-norm matching (no manual loss-weight tuning), and systematically studied filter family, weight-resampling schedule and initialization.</li>
+          <li>Across three 2D and two 3D reconstruction tasks, outperforms a pixel loss on three and matches it on two, beats prior random-filter losses on all 2D tasks, and adds <span class="metric">&lt;2% FLOPs</span> with no inference cost (<span class="metric">182×</span> cheaper than a VGG19 perceptual loss).</li>
         </ul>
       </div>
 
@@ -820,28 +833,28 @@
         <div class="titem-head">
           <div>
             <h3>Research Center for Medical AI, SIAT, Chinese Academy of Sciences</h3>
-            <div class="org-sub"><b>Full-time On-site Research Intern</b> · Shenzhen, China (~6 months) · Multi-Phase Liver MRI Synthesis &amp; Lightweight MRI Translation</div>
+            <div class="org-sub">Research Assistant — Prof. Kun Shang's Group · Medical Image Synthesis, Reconstruction &amp; Segmentation (incl. ~6 months full-time on site in Shenzhen, 2025)</div>
           </div>
-          <span class="t-date">04/2025 — 11/2025</span>
+          <span class="t-date">11/2024 — Now</span>
         </div>
         <ul>
-          <li>Developed <span class="hl">DMAMSA-Net</span> for arterial-phase liver MRI synthesis — Dynamic Modality-Adaptive memory selection + Multi-Scale Grouped Attention with linear complexity; SOTA <span class="metric">+1–2 dB PSNR</span> on LLD-MMRI/Duke at only <span class="metric">3.73M params</span>.</li>
-          <li>Built a <span class="hl">physics-guided CNN</span> integrating analytical T1/T2 relaxation dynamics with a parameter-estimation bottleneck — competitive fidelity on IXI/AIBL at <span class="metric">11.4M params (~10× smaller)</span>, deployable under 8 GB VRAM.</li>
+          <li><i>Arterial-phase liver MRI synthesis</i> (JBHI, under review): co-developed <span class="hl">DMAMSA-Net</span> — Dynamic Modality-Adaptive memory selection + Multi-Scale Grouped Attention with linear complexity; <span class="metric">+1–2 dB PSNR</span> over ResViT/I2I-Mamba on LLD-MMRI/Duke at only <span class="metric">3.73M params</span>.</li>
+          <li><i>Lightweight physics-guided MRI translation</i>: a CNN integrating analytical T1/T2 relaxation dynamics that predicts physical parameters instead of pixels — competitive fidelity on IXI/AIBL at <span class="metric">11.4M params (~10× smaller)</span>, under 8 GB VRAM.</li>
+          <li><i>Segmentation in complex scenarios</i> (<span class="hl">FSANet</span>, first author, IEEE TIP under review): Dual-Domain Awareness Module with FFT-based dynamic filtering + Edge Estimation Module; curated <span class="hl">SceneX</span> (11,000 images, 10 scenarios); SOTA on 10 benchmarks, <span class="metric">~1.1% mIoU</span> above SAM-2.</li>
+          <li><i>Other group projects</i>: 3D brain MRI synthesis (ProFA-GAN, PRCV 2026, co-first), CT metal artifact reduction (SA-INR, IEEE SPL, co-first), and joint contrast-enhanced MRI synthesis &amp; tumor segmentation (CoSynSegNet).</li>
         </ul>
       </div>
 
       <div class="titem reveal">
         <div class="titem-head">
           <div>
-            <h3>Tianjin University &amp; Chinese Academy of Sciences</h3>
-            <div class="org-sub">Research Assistant · Image Segmentation in Complex Scenarios</div>
+            <h3>California Institute of Technology — SURF 2026 Fellow</h3>
+            <div class="org-sub">Summer Undergraduate Research Fellowship, AnimaLab · 3D MRI Reconstruction with Neural Operators</div>
           </div>
-          <span class="t-date">11/2024 — 02/2025</span>
+          <span class="t-date">06/2026 — 08/2026</span>
         </div>
         <ul>
-          <li>Proposed <span class="hl">FSANet</span> with a Dual-Domain Awareness Module — FFT-based dynamic filtering to disentangle noise and recover structure.</li>
-          <li>Curated <span class="hl">SceneX</span>: 11,000 images across 10 challenging scenarios with a semi-automated geometric annotation pipeline.</li>
-          <li>SOTA on 10 benchmarks, surpassing SAM-2 by <span class="metric">~1.1% mIoU</span>, with an Edge Estimation Module for zero-shot generalization.</li>
+          <li>Selected for the 2026 Caltech Summer Undergraduate Research Fellowship (SURF); researched resolution-agnostic neural operators for 3D MRI reconstruction (related publication: NeurIPS 2026, co-first author).</li>
         </ul>
       </div>
 
@@ -884,20 +897,6 @@
         </ul>
       </div>
 
-      <div class="titem reveal">
-        <div class="titem-head">
-          <div>
-            <h3>Beijing Jingmei Aviation Service Co., Ltd.</h3>
-            <div class="org-sub">Machine Learning Engineer Intern · Airline Service LLM Agent</div>
-          </div>
-          <span class="t-date">09/2024 — 11/2024</span>
-        </div>
-        <ul>
-          <li>Engineered an airline service agent on ChatGLM2-6B; implemented a <span class="hl">custom QLoRA framework from scratch</span> in PyTorch for consumer-GPU fine-tuning.</li>
-          <li>Developed custom Int4 quantized linear layers replacing standard Transformer QKV blocks — major memory reduction with preserved inference fidelity.</li>
-        </ul>
-      </div>
-
     </div>
   </section>
 
@@ -929,7 +928,7 @@
           <div class="medal">🎓</div>
           <div>
             <div class="a-title">2026 Caltech SURF Fellowship</div>
-            <div class="a-sub">Summer Undergraduate Research Fellowship, AnimaLab.</div>
+            <div class="a-sub">Summer Undergraduate Research Fellowship, California Institute of Technology.</div>
             <span class="a-prize">Fellow</span>
           </div>
         </div>
@@ -942,7 +941,7 @@
         </div>
         <div class="skill-group">
           <div class="skill-label">AI / Research</div>
-          <div class="chips"><span class="chip">Medical Imaging (MRI/CT)</span><span class="chip">Neural Operators</span><span class="chip">Generative Models</span><span class="chip">LLMs / QLoRA</span><span class="chip">Mamba / SSM</span><span class="chip">SNN</span><span class="chip">INR / NeRF</span></div>
+          <div class="chips"><span class="chip">Medical Imaging (MRI/CT)</span><span class="chip">MRI Reconstruction</span><span class="chip">Flow Matching / Diffusion</span><span class="chip">Neural Operators</span><span class="chip">Generative Models</span><span class="chip">LLMs / QLoRA</span><span class="chip">Mamba / SSM</span><span class="chip">SNN</span><span class="chip">INR / NeRF</span></div>
         </div>
         <div class="skill-group">
           <div class="skill-label">Tools</div>
@@ -961,7 +960,7 @@
       <div class="edu-card reveal">
         <div class="school">Delft University of Technology</div>
         <div class="degree">B.S. in Computer Science and Engineering</div>
-        <div class="edu-meta"><span class="t-date">09/2025 — Now</span><span class="gpa">GPA 8.83 / 10</span></div>
+        <div class="edu-meta"><span class="t-date">09/2025 — Now</span><span class="gpa">GPA 8.43 / 10</span></div>
       </div>
       <div class="edu-card reveal">
         <div class="school">Hebei University of Technology</div>
