@@ -605,7 +605,7 @@
   </div>
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><div class="num"><span class="count" data-to="13">0</span></div><div class="lbl">Papers authored / co-authored</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="11">0</span></div><div class="lbl">Papers authored / co-authored</div></div>
       <div class="stat"><div class="num"><span class="count" data-to="2">0</span></div><div class="lbl">NeurIPS 2026 papers</div></div>
       <div class="stat"><div class="num"><span class="count" data-to="7">0</span></div><div class="lbl">Accepted / published</div></div>
       <div class="stat"><div class="num">8.43<span>/10</span></div><div class="lbl">GPA · TU Delft</div></div>
@@ -647,7 +647,6 @@
     <div class="news reveal">
       <div class="news-item"><div class="news-date">2026.10.27</div><div class="news-body"><b>SA-INR</b>, scattering-aware implicit neural representation for CT metal artifact reduction (first author), accepted at <b>IEEE Signal Processing Letters</b>.</div></div>
       <div class="news-item"><div class="news-date">2026.09</div><div class="news-body">Two papers accepted at <b>NeurIPS 2026</b>: 3D MRI reconstruction with resolution-agnostic neural operators (co-first author) and <b>MAdam</b>.</div></div>
-      <div class="news-item"><div class="news-date">2026.09</div><div class="news-body">Submitted two first-author papers to <b>ICLR 2027</b>: <b>RaFL</b> (random filter losses) and <b>EquiFlow</b> (few-step 3D MRI reconstruction).</div></div>
       <div class="news-item"><div class="news-date">2026.09</div><div class="news-body"><b>FSANet</b> is on arXiv — <a href="https://arxiv.org/abs/2609.16773">arXiv:2609.16773</a>.</div></div>
       <div class="news-item"><div class="news-date">2026.07</div><div class="news-body"><b>OPERA</b> accepted at <b>ACM MM 2026</b>; <b>ProFA-GAN</b> (co-first author) accepted at <b>PRCV 2026</b>.</div></div>
       <div class="news-item"><div class="news-date">2026.06</div><div class="news-body"><b>MAdam</b> is on arXiv — <a href="https://arxiv.org/abs/2606.03904">arXiv:2606.03904</a>, metric-aware multi-objective Adam, with the Cornell SabLab team.</div></div>
@@ -672,23 +671,7 @@
     </div>
     <div class="pub-list">
 
-      <div class="pub first-author reveal" data-cat="first">
-        <div class="pub-top">
-          <div class="pub-title">RaFL: An Empirical Study of Random Filter Losses for Image Reconstruction</div>
-          <span class="badge review">Under Review</span>
-        </div>
-        <div class="pub-authors"><b>Wang, R.</b>, Liu, F., Tiulpin, A., Sabuncu, M. R., Kim, H.</div>
-        <div class="pub-venue"><span class="venue-name">ICLR 2027</span><span class="pub-tag">Loss Functions</span><span class="pub-tag">Image Reconstruction</span></div>
-      </div>
 
-      <div class="pub first-author reveal" data-cat="first">
-        <div class="pub-top">
-          <div class="pub-title">EquiFlow: Few-Step 3D MRI Reconstruction with an Equivariant MeanFlow Field</div>
-          <span class="badge review">Under Review</span>
-        </div>
-        <div class="pub-authors"><b>Wang, R.</b>, Peng, F.</div>
-        <div class="pub-venue"><span class="venue-name">ICLR 2027</span><span class="pub-tag">MRI Reconstruction</span><span class="pub-tag">Flow Matching</span></div>
-      </div>
 
       <div class="pub first-author reveal" data-cat="first out">
         <div class="pub-top">
@@ -804,15 +787,10 @@
         <div class="titem-head">
           <div>
             <h3>Cornell University · SabLab</h3>
-            <div class="org-sub">Visiting Student Researcher — with Dr. Heejong Kim &amp; Prof. Mert R. Sabuncu · Random Filter Losses (RaFL)</div>
+            <div class="org-sub">Visiting Student Researcher — with Dr. Heejong Kim &amp; Prof. Mert R. Sabuncu</div>
           </div>
           <span class="t-date">12/2025 — Now</span>
         </div>
-        <ul>
-          <li>Led <span class="hl">RaFL</span> (first author, ICLR 2027 submission): a random filter loss that compares prediction and target through random convolutions, random Fourier features and random wavelet filters — no pretrained features, no task-specific loss engineering.</li>
-          <li>Balanced the filter families automatically via gradient-norm matching (no manual loss-weight tuning), and systematically studied filter family, weight-resampling schedule and initialization.</li>
-          <li>Across three 2D and two 3D reconstruction tasks, outperforms a pixel loss on three and matches it on two, beats prior random-filter losses on all 2D tasks, and adds <span class="metric">&lt;2% FLOPs</span> with no inference cost (<span class="metric">182×</span> cheaper than a VGG19 perceptual loss).</li>
-        </ul>
       </div>
 
       <div class="titem reveal">
